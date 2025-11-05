@@ -9,7 +9,7 @@ The footprint data leveraged in this study comes from the USA structures dataset
 #### Parcel Information
 We leverage a proprietary dataset, Lightbox smart parcels,4 which includes landuse codes for the entirety of the U.S. and are provided through a data agreement for federal use cases. Includes a landuse code for every parcel of land within the U.S. and therefore, we are able to generate a binary feature which distinguishes structures on land classified for MHP versus non-MHP. This feature was added to the footprint dataset for each structure.
 
-#### Morphology
+### Morphology
 We then follow the workflow presented by Hauser et al. [33] and generate 65 distinct morphology features for each individual building within our dataset. These include geometric, engineered, and contextual features.
 
 ### Data Preprocessing
