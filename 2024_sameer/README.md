@@ -3,17 +3,17 @@ Understanding the built environment is essential to the overall study of populat
 
 ## Methodology
 ### Data
-### Building Footprints
+#### Building Footprints
 The footprint data leveraged in this study comes from the USA structures dataset. This dataset covers the entirity of the U.S. and is a compilation of footprints which are derived from both satellite and lidar imagery. It was developed by Oak Ridge National Laboratory (ORNL), Federal Emergency Management Agency Geospatial Response Office, and the Department of Homeland Security Science and Technology Directorate.
 
-### Parcel Information
+#### Parcel Information
 We leverage a proprietary dataset, Lightbox smart parcels,4 which includes landuse codes for the entirety of the U.S. and are provided through a data agreement for federal use cases. Includes a landuse code for every parcel of land within the U.S. and therefore, we are able to generate a binary feature which distinguishes structures on land classified for MHP versus non-MHP. This feature was added to the footprint dataset for each structure.
 
-### Morphology
+#### Morphology
 We then follow the workflow presented by Hauser et al. [33] and generate 65 distinct morphology features for each individual building within our dataset. These include geometric, engineered, and contextual features.
 
-## Data Preprocessing
+### Data Preprocessing
 We deploy a pre-processing step which discretizes individual MH from those within a MHP. We leverage the feature n count 100, which is the number of neighbors within a 100m radius. For all structures within our dataset which are identified as a MH, we further filter this metric to have at least a value of 3 for the n count 100 to segment a singular MH from a MH within a MHP. To reduce dimensionality of the dataset, we then ran recursive feature elimination, similar to the approach presented by Adams et al. and leverage a XGBoost regressor.
 
-## Model Development
+### Model Development
 We apply 4 distinct classifier models Logistic Regresssion, Decision Tree, Random Forest, and XGBoost.
